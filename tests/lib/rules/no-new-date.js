@@ -9,8 +9,7 @@
 //------------------------------------------------------------------------------
 
 const rule = require("../../../lib/rules/no-new-date"),
-  RuleTester = require("eslint").RuleTester;
-
+	RuleTester = require("eslint").RuleTester;
 
 //------------------------------------------------------------------------------
 // Tests
@@ -18,14 +17,17 @@ const rule = require("../../../lib/rules/no-new-date"),
 
 const ruleTester = new RuleTester();
 ruleTester.run("no-new-date", rule, {
-  valid: [
-    // give me some code that won't trigger a warning
-  ],
+	valid: [
+		// give me some code that won't trigger a warning
+		{ code: "new Date(2024,2,24)" },
+		{ code: "new Date(2002-2-22)" },
+	],
 
-  invalid: [
-    {
-      code: "marco",
-      errors: [{ message: "Fill me in.", type: "Me too" }],
-    },
-  ],
+	invalid: [
+		{
+			code: "new Date()",
+			errors: [{ message: rule.meta.messages.message }],
+			output: "ServerDate()",
+		},
+	],
 });
