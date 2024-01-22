@@ -34,10 +34,12 @@ Then configure the rules you want to use under the rules section.
 ```json
 {
     "rules": {
-        "marco/rule-name": 2
+        "marco/no-new-date": "error",
     }
 }
 ```
+
+![example](./assets/example.png)
 
 
 
