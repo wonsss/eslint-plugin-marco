@@ -39,7 +39,7 @@ Then configure the rules you want to use under the rules section.
 }
 ```
 
-![example](./assets/example.png)
+![example-no-new-date](./assets/example-no-new-date.png)
 
 
 
